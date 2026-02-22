@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart</title>
+</head>
+<body>
+  <h2>Your Cart Items</h2>
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.write("Total Items: " + cart.length);
+  </script>
+</body>
+</html>

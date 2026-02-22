@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KITCHEN APPLIANCES</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="icon" type="image/jpg" href="./images/tab icon/favicon.jpg">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/carts.css">
+</head>
+
+<body>
+
+<!-- ===== HEADER (SAME AS HOME) ===== -->
+<header>
+  <div class="header-top">
+    <a href="#" class="logo"><span id="aks">AKS</span> Electronics</a>
+
+    <div class="header-icons">
+      <!-- CART ICON -->
+      <a href="#" class="cart-icon" id="cartBtn">
+        🛒 <span class="cart-count">0</span>
+      </a>
+
+      <!-- CART DROPDOWN (ICON KE SATH ATTACHED) -->
+      <div class="cart-box" id="cartBox">
+        <h3>Your Cart</h3>
+        <div id="cartItems"></div>
+        <button class="buy-now" id="buyNow">Buy Now</button>
+      </div>
+
+      <!-- HAMBURGER -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-container">
+    <input type="text" placeholder="Search products..." />
+    <button>Search</button>
+  </div>
+
+  <nav class="nav-links" id="navLinks">
+    <a href="../index.html">Home</a>
+    <a href="../index.html">Products</a>
+    <a href="#">About</a>
+    <a href="./location.html">Location</a>
+  </nav>
+</header>
+
+
+<!-- ===== PRODUCTS ===== -->
+<section class="products-section">
+  <h2>KITCHEN APPLIANCES</h2>
+
+  <div class="products-grid">
+
+    <div class="product-card">
+      <img src="../images/kichen appliance/kethicne.png" alt="AceKool 5L Stainless Electric Meat">
+      <h3>AceKool 5L Stainless Electric Meat</h3>
+      <p class="price">Rs 5,000</p>
+      <button class="add-cart" data-name="AceKool 5L Stainless Electric Meat" data-price="5,000">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product-card">
+      <img src="../images/kichen appliance/Kenwood-microwave-overn.png" alt="kenwood microwave oven">
+      <h3>Kenwood Microwave</h3>
+      <p class="price">Rs 29,000</p>
+      <button class="add-cart" data-name="kenwood microwave" data-price="29,000 ">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product-card">
+      <img src="../images/AIRFRYAR/BLENDER.png" alt="RAF Stainless Steel Hand Blender">
+      <h3>RAF Stainless Steel Hand Blender</h3>
+      <p class="price">Rs 3,000</p>
+      <button class="add-cart" data-name="RAF Stainless Steel Hand Blender" data-price="3,000">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product-card">
+      <img src="../images/AIRFRYAR/COFFE-BLENDER.png" alt="Cofee Blender">
+      <h3>Electric Hand Mixer </h3>
+      <p class="price">Rs 2,000 – 4,500 </p>
+      <button class="add-cart" data-name="Electric Hand Mixer" data-price="2,000 – 4,500">
+        Add to Cart
+      </button>
+    </div>
+
+   <div class="product-card">
+      <img src="../images/AIRFRYAR/philips-plus.png" alt="philips-plus">
+      <h3>RAF Electric Induction Cooker</h3>
+      <p class="price">Rs 5,200</p>
+      <button class="add-cart" data-name="RAF Electric Induction Cooker" data-price="5,200">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product-card">
+      <img src="../images/AIRFRYAR/Philips-Airfryar.png" alt="Philips-Airfryar">
+      <h3>RAF Stainless Steel Hand Blender</h3>
+      <p class="price">Rs 2,800 – Rs. 3,500.</p>
+      <button class="add-cart" data-name="RAF Stainless Steel Hand Blender" data-price="2,800 – Rs. 3,500.">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product-card">
+      <img src="../images/AIRFRYAR/kenwood-air-fryar.png" alt="KENWOOD AIRFRYAR">
+      <h3>Philips Essential Airfryer</h3>
+      <p class="price">Rs 25,000</p>
+      <button class="add-cart" data-name="Philips Essential Airfryer" data-price="32,000 - 45,000">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product-card">
+      <img src="../images/kichen appliance/cofee-blend.png" alt="Coffee Beater">
+      <h3>RAF Electric Milk Frother / Coffee Beater</h3>
+      <p class="price">Rs  1,200 – Rs. 1,800.</p>
+      <button class="add-cart" data-name="RAF Electric Milk Frother/ Coffee Beater" data-price=" 1,200 – Rs. 1,800.">
+        Add to Cart
+      </button>
+    </div>
+
+     <div class="product-card">
+      <img src="../images/kichen appliance/solor-chola.png" alt="solor-chola">
+      <h3>RAF electric induction plate</h3>
+      <p class="price">Rs 4,100</p>
+      <button class="add-cart" data-name="RAF electric induction plate" data-price="Rs 4,100">
+        Add to Cart
+      </button>
+    </div>
+
+     <div class="product-card">
+      <img src="../images/kichen appliance/chola.png" alt="comming soon">
+      <h3>comming soon</h3>
+      <p class="price">Rs 000</p>
+      <button class="add-cart" data-name="Sony Home Theatre" data-price="0000">
+        Add to Cart
+      </button>
+    </div>
+    <div class="product-card">
+      <img src="../images/AIRFRYAR/sharp-airfryar-8-ltr.png" alt="comming soon">
+      <h3>3-Burner Stainless Steel Built-in Gas Hob</h3>
+      <p class="price">Rs  9,000 – Rs. 17,000.</p>
+      <button class="add-cart" data-name="3-Burner Stainless Steel Built-in Gas Hob" data-price=" 9,000 – Rs. 17,000.">
+        Add to Cart
+      </button>
+    </div>
+      <div class="product-card">
+      <img src="../images/AIRFRYAR/COMMING-SOON.png" alt="comming soon">
+      <h3>comming soon</h3>
+      <p class="price">Rs 000</p>
+      <button class="add-cart" data-name="comming soon" data-price="000">
+        Add to Cart
+      </button>
+    </div>
+
+      
+
+  </div>
+</section>
+
+<!-- ===== CART ===== -->
+<section class="cart-box" id="cartBox">
+  <h3>Your Cart</h3>
+  <div id="cartItems"></div>
+  <button class="buy-now" id="buyNow">Buy Now</button>
+</section>
+<!-- ===== FOOTER ===== -->
+    <footer class="modern-footer">
+      <div class="footer-top">
+        <!-- Contact -->
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <p>Email: info@gmail.com</p>
+          <p>WhatsApp: +92 300 0000000</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#h">Home</a></li>
+            <li><a href="#coll">Collection</a></li>
+            <li><a href="#ab">About</a></li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div class="footer-col">
+          <h3>Follow</h3>
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com/aks_electronicsofficial?igsh=MWtpdXExZXZldHZzYg=="
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/share/1Coq3mACNX/"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a
+              href="https://www.tiktok.com/"
+              target="_blank"
+              aria-label="TikTok"
+            >
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a
+              href="https://wa.me/923366250075"
+              target="_blank"
+              aria-label="WhatsApp"
+            >
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="footer-col map-col">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d211650.0712965293!2d71.4667511!3d34.0173802!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1771768643518!5m2!1sen!2s"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="footer-bottom">&copy; 2026 All Rights Reserved</div>
+    </footer>
+
+
+<script src="../js/carts.js"></script>
+<script src="../js/main.js"></script>
+
+</body>
+</html>

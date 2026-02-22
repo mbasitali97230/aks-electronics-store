@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Air Conditioner</title>
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  overflow:hidden;
+  color:#fff;
+}
+
+/* BACKGROUND FLOATING DOTS */
+.particles span{
+  position:absolute;
+  display:block;
+  width:8px;
+  height:8px;
+  background:rgba(255,255,255,0.2);
+  border-radius:50%;
+  animation: float 15s linear infinite;
+}
+
+@keyframes float{
+  0%{
+    transform: translateY(100vh) scale(0);
+    opacity:0;
+  }
+  50%{
+    opacity:1;
+  }
+  100%{
+    transform: translateY(-10vh) scale(1);
+    opacity:0;
+  }
+}
+
+/* MAIN CONTAINER */
+.container{
+  position:relative;
+  z-index:2;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+/* TITLE */
+h1{
+  font-size:clamp(2.5rem,6vw,4rem);
+  letter-spacing:4px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+  from{
+    text-shadow:0 0 10px #00f2ff;
+  }
+  to{
+    text-shadow:0 0 30px #00f2ff;
+  }
+}
+
+/* TYPING TEXT */
+.typing{
+  margin-top:20px;
+  font-size:clamp(1rem,3vw,1.4rem);
+  min-height:30px;
+}
+
+/* SCROLLING TEXT */
+.scroll-text{
+  position:absolute;
+  bottom:30px;
+  white-space:nowrap;
+  font-size:1rem;
+  opacity:0.7;
+  animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll{
+  0%{ transform: translateX(100%); }
+  100%{ transform: translateX(-100%); }
+}
+
+/* PROGRESS BAR */
+.progress-box{
+  margin-top:40px;
+  width:100%;
+  max-width:400px;
+}
+
+.progress{
+  width:100%;
+  height:10px;
+  background:rgba(255,255,255,0.2);
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.progress span{
+  display:block;
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#00f2ff,#00c6ff);
+  animation: load 6s ease-in-out infinite;
+}
+
+@keyframes load{
+  0%{ width:0; }
+  50%{ width:80%; }
+  100%{ width:0; }
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  h1{letter-spacing:2px;}
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- ===== HEADER (SAME AS HOME) ===== -->
+<header>
+  <div class="header-top">
+    <a href="#" class="logo"><span id="aks">AKS</span> Electronics</a>
+
+    <div class="header-icons">
+      <!-- CART ICON -->
+      <a href="#" class="cart-icon" id="cartBtn">
+        🛒 <span class="cart-count">0</span>
+      </a>
+
+      <!-- CART DROPDOWN (ICON KE SATH ATTACHED) -->
+      <div class="cart-box" id="cartBox">
+        <!-- <h3>Your Cart</h3>
+        <div id="cartItems"></div> -->
+      </div>
+
+      <!-- HAMBURGER -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-container">
+    <input type="text" placeholder="Search products..." />
+    <button>Search</button>
+  </div>
+
+  <nav class="nav-links" id="navLinks">
+    <a href="../index.html">Home</a>
+    <a href="../index.html">Products</a>
+    <a href="#">About</a>
+    <a href="./location.html">Location</a>
+  </nav>
+</header>
+
+<!-- PARTICLES -->
+<div class="particles"></div>
+
+<div class="container">
+  <h1>COMING SOON</h1>
+  <div class="typing" id="typing"></div>
+
+  <div class="progress-box">
+    <div class="progress">
+      <span></span>
+    </div>
+  </div>
+</div>
+
+<div class="scroll-text">
+  🚀 Something amazing is loading • Stay tuned • Big things are coming 🚀
+</div>
+
+<script>
+// TYPING EFFECT
+const texts = [
+  "We are working on something awesome ✨",
+  "Launching very soon 🚀",
+  "Get ready for the experience 😎"
+];
+
+let index = 0;
+let charIndex = 0;
+const typingEl = document.getElementById("typing");
+
+function typeText(){
+  if(charIndex < texts[index].length){
+    typingEl.textContent += texts[index].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeText, 80);
+  }else{
+    setTimeout(eraseText, 1500);
+  }
+}
+
+function eraseText(){
+  if(charIndex > 0){
+    typingEl.textContent = texts[index].substring(0,charIndex-1);
+    charIndex--;
+    setTimeout(eraseText, 50);
+  }else{
+    index = (index + 1) % texts.length;
+    setTimeout(typeText, 500);
+  }
+}
+
+typeText();
+
+// CREATE PARTICLES
+const particleContainer = document.querySelector(".particles");
+for(let i=0;i<40;i++){
+  const span = document.createElement("span");
+  span.style.left = Math.random()*100 + "%";
+  span.style.animationDuration = 10 + Math.random()*10 + "s";
+  span.style.animationDelay = Math.random()*5 + "s";
+  particleContainer.appendChild(span);
+}
+</script>
+
+</body>
+</html>

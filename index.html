@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AKS ELECTRONICS · simple loader</title>
+  
+  <!-- Font Awesome (same as original) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <style>
+    /* minimal reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ===== SIMPLE PROFESSIONAL LOADER ===== */
+    #simple-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;  /* clean white background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+
+    .loader-container {
+      text-align: center;
+      max-width: 400px;
+      padding: 2rem;
+    }
+
+    /* simple brand wordmark */
+    .brand-name {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #1a2e3f;        /* deep navy - professional */
+      margin-bottom: 0.75rem;
+    }
+    .brand-name span {
+      color: #2a7faa;        /* subtle accent */
+      font-weight: 500;
+    }
+
+    /* simple loading bar (very clean) */
+    .loading-bar {
+      width: 260px;
+      height: 4px;
+      background: #e9edf2;
+      border-radius: 50px;
+      margin: 2rem auto 1.5rem;
+      overflow: hidden;
+    }
+
+    .loading-bar::after {
+      content: "";
+      display: block;
+      width: 70px;
+      height: 4px;
+      background: #2a7faa;    /* solid blue-grey */
+      border-radius: 50px;
+      animation: slide 1.4s infinite ease-in-out;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(-70px); }
+      60% { transform: translateX(260px); }
+      100% { transform: translateX(260px); }
+    }
+
+    /* subtle message */
+    .loading-message {
+      color: #5a6f7e;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
+
+    .loading-message i {
+      color: #2a7faa;
+      margin: 0 4px;
+      font-size: 0.9rem;
+    }
+
+    /* ===== hide main content until loader disappears ===== */
+    .main-content-hidden {
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    /* tiny responsive */
+    @media (max-width: 500px) {
+      .brand-name { font-size: 2rem; }
+      .loading-bar { width: 200px; }
+    }
+  </style>
+
+  <!-- original CSS (your existing style) – kept intact -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" type="image/jpg" href="./images/tab icon/favicon.jpg" />
+</head>
+<body>
+
+  <!-- ===== SIMPLE PROFESSIONAL LOADER (with AKS ELECTRONICS) ===== -->
+  <div id="simple-loader">
+    <div class="loader-container">
+      <div class="brand-name">AKS <span>ELECTRONICS</span></div>
+      <div class="loading-bar"></div>
+      <div class="loading-message">
+        <i class="fa-regular fa-circle-check"></i> loading premium products <i class="fa-regular fa-circle-check"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MAIN WEBSITE CONTENT (completely unchanged) ===== -->
+  <div id="main-content" class="main-content-hidden">
+    <header>
+      <div class="header-top">
+        <a href="#" class="logo"><span id="aks">AKS</span> Electronics</a>
+        <div class="header-icons">
+          <a href="#" class="cart-icon">🛒 <span class="cart-count">0</span></a>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="search-container">
+        <input type="text" placeholder="Search products..." />
+        <button>Search</button>
+      </div>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#" id="h">Home</a>
+        <a href="#coll">Collection</a>
+        <a href="#" id="ab">About</a>
+        <a href="./pages/location.html" id="loc">Location</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>AKS IMPORT</h1>
+        <p>
+          AKS Import ek trusted online store hai jahan aap ko high quality
+          imported products milte hain. Hum best prices, fast delivery aur
+          customer satisfaction ko priority dete hain. Aaj hi hamari collection
+          explore karein.
+        </p>
+        <a href="#" class="hero-btn">Shop Now</a>
+      </div>
+    </section>
+
+    <section class="categories" id="coll">
+      <div class="categories-grid">
+        <!-- 15 Product Cards (exact same) -->
+        <a href="./pages/tv and led.html" class="category-card bg-blue">
+          <img src="./images/product section/LED TV.png" alt="LED TV" />
+          <h3>LED TV & SOUND SYSTEM</h3>
+        </a>
+        <a href="./pages/Airconditioner.html" class="category-card bg-mint">
+          <img src="./images/product section/Air Condition 1.png" alt="Air Conditioner" />
+          <h3>AIR-CON & AIR COOLER</h3>
+        </a>
+        <a href="./pages/REFRIGERATOR & FREEZERS.html" class="category-card bg-olive">
+          <img src="./images/product section/refre.png" alt="Refrigerator" />
+          <h3>REFRIGERATOR & FREEZERS</h3>
+        </a>
+        <a href="./pages/WASHING SOLUTIONS.html" class="category-card bg-pink">
+          <img src="./images/product section/washing machine 1.png" alt="Washing Machine" />
+          <h3>WASHING SOLUTIONS</h3>
+        </a>
+        <a href="./pages/Dishwasher.html" class="category-card bg-green">
+          <img src="./images/product section/Dishwasher.png" alt="Dishwasher" />
+          <h3>DISHWASHER</h3>
+        </a>
+        <a href="./pages/Kitchen Appliances.html" class="category-card bg-sky">
+          <img src="./images/product section/Kitchen Appliances.png" alt="Kitchen Appliances" />
+          <h3>KITCHEN APPLIANCES</h3>
+        </a>
+        <a href="./pages/Home Appliances.html" class="category-card bg-light">
+          <img src="./images/product section/Home Appliance.png" alt="Home Appliances" />
+          <h3>HOME APPLIANCES</h3>
+        </a>
+        <a href="./pages/Kitchen Appliances.html" class="category-card bg-cream">
+          <img src="./images/product section/Kitchen Appliances1.png" alt="Built In Kitchen" />
+          <h3>BUILT-IN KITCHEN</h3>
+        </a>
+        <a href="./pages/cofee.html" class="category-card bg-gray">
+          <img src="./images/product section/cofee machine.png" alt="Coffee Machine" />
+          <h3>COFFEE MACHINES</h3>
+        </a>
+        <a href="./pages/speaker.html" class="category-card bg-cyan">
+          <img src="./images/product section/sound and speaker.png" alt="Sound & Speakers" />
+          <h3>SOUND & SPEAKERS SYSTEMS</h3>
+        </a>
+        <a href="./pages/" class="category-card bg-cream">
+          <img src="./images/product section/WATER DISPENSER.png" alt="WATER DISPENSER" />
+          <h3>WATER DISPENSERS</h3>
+        </a>
+        <a href="./pages/MICROWAVES OVENS.HTML" class="category-card bg-pink">
+          <img src="./images/product section/MICRO OWN.png" alt="MICROWAVES OVENS" />
+          <h3>MICROWAVES OVENS</h3>
+        </a>
+        <a href="./pages/AIR FRYERS.html" class="category-card bg-sky">
+          <img src="./images/product section/AIR FRAYER.png" alt="AIR FRYERS" />
+          <h3>AIR FRYERS</h3>
+        </a>
+        <a href="./pages/BEAUTY & PERSONAL CARE.html" class="category-card bg-peach">
+          <img src="./images/product section/BEAUTY.png" alt="BEAUTY & PERSONAL CARE" />
+          <h3>BEAUTY & PERSONAL CARE</h3>
+        </a>
+        <a href="./pages/HEATERS & GEYSERS.html" class="category-card bg-hgray">
+          <img src="./images/product section/heating-and-greshir-3.png" alt="HEATERS & GEYSERS" />
+          <h3>HEATERS & GEYSERS</h3>
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="modern-footer">
+      <div class="footer-top">
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <p>Email: info@gmail.com</p>
+          <p>WhatsApp: +92 300 0000000</p>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#h">Home</a></li>
+            <li><a href="#coll">Collection</a></li>
+            <li><a href="#ab">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Follow</h3>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/aks_electronicsofficial?igsh=MWtpdXExZXZldHZzYg==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1Coq3mACNX/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/923366250075" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col map-col">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d211650.0712965293!2d71.4667511!3d34.0173802!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1771768643518!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2026 All Rights Reserved</div>
+    </footer>
+
+    <!-- whatsapp floating button -->
+    <a href="https://wa.me/923366250075?text=Assalam%20o%20alakuim,%20mein%20order%20karna%20chahta%20hu" class="wa-icon" target="_blank" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 .5C7.44.5.5 7.44.5 16c0 2.82.74 5.58 2.15 8.01L.5 31.5l7.69-2.02A15.4 15.4 0 0016 31.5c8.56 0 15.5-6.94 15.5-15.5S24.56.5 16 .5zm0 28.2c-2.53 0-4.89-.74-6.88-2.01l-.49-.3-4.56 1.2 1.22-4.44-.32-.52A12.9 12.9 0 013.1 16C3.1 9.21 9.21 3.1 16 3.1S28.9 9.21 28.9 16 22.79 28.7 16 28.7zm7.02-9.65c-.38-.19-2.23-1.1-2.58-1.22-.35-.13-.6-.19-.86.19-.26.38-.99 1.22-1.21 1.47-.22.26-.45.29-.83.1-.38-.19-1.6-.59-3.05-1.89-1.13-1.01-1.89-2.26-2.11-2.64-.22-.38-.02-.58.17-.77.17-.17.38-.45.57-.67.19-.22.26-.38.38-.64.13-.26.06-.48-.03-.67-.1-.19-.86-2.08-1.18-2.85-.31-.74-.63-.64-.86-.65h-.74c-.26 0-.67.1-1.02.48-.35.38-1.34 1.31-1.34 3.19s1.38 3.7 1.57 3.95c.19.26 2.72 4.15 6.6 5.82.92.4 1.64.64 2.2.82.92.29 1.76.25 2.42.15.74-.11 2.23-.91 2.55-1.79.32-.88.32-1.63.22-1.79-.1-.16-.35-.26-.74-.45z" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- original main.js (preserved) + simple loader script -->
+  <script src="./js/main.js"></script>
+  <script>
+    (function() {
+      const loader = document.getElementById('simple-loader');
+      const mainContent = document.getElementById('main-content');
+      
+      // ensure main content is hidden at start
+      mainContent.classList.add('main-content-hidden');
+
+      // function to reveal website
+      function revealWebsite() {
+        loader.style.opacity = '0';
+        loader.style.visibility = 'hidden';
+        mainContent.classList.remove('main-content-hidden');
+      }
+
+      // professional behaviour: show loader for at least 1.5s, but also wait for full load
+      const startTime = Date.now();
+      const minDisplayTime = 1500; // 1.5 seconds – clean & professional
+
+      window.addEventListener('load', function() {
+        const timeElapsed = Date.now() - startTime;
+        const remainingTime = Math.max(0, minDisplayTime - timeElapsed);
+        
+        setTimeout(revealWebsite, remainingTime);
+      });
+
+      // fallback if load takes too long – anyway reveal after max 3 sec
+      setTimeout(revealWebsite, 3000);
+    })();
+  </script>
+
+  <!-- small extra style to ensure main content hidden (same as above) -->
+  <style>
+    .main-content-hidden {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      height: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    /* white loader stays on top */
+    #simple-loader {
+      pointer-events: auto;
+    }
+  </style>
+</body>
+</html>
